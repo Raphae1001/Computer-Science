@@ -1,0 +1,150 @@
+class Brick {
+    field Array brickSprite;
+    field int x, y;
+    field boolean isDestroyed;
+
+    method void drawSprite(Array sprite, int x, int y, int height, int width) {
+        var int i, j, row, bit;
+        let i = 0;
+        while (i < height) {  
+            let row = sprite[i];
+            let j = 0;
+            while (j < width) {  
+                let bit = row & (1 < (width - 1 - j));  
+                if (~(bit = 0)) {
+                    do Screen.drawRectangle(x + j, y + i, x + j + 1, y + i + 1);  
+                }
+                let j = j + 1;
+            }
+            let i = i + 1;
+        }
+        return;
+    }
+
+    method void new() {
+        let brickSprite[0] = 31;  
+        let brickSprite[1] = 17;  
+        let brickSprite[2] = 17;  
+        let brickSprite[3] = 17;  
+        let brickSprite[4] = 31;         
+        let isDestroyed = false;
+        return;
+    }
+
+    method void init(int posX, int posY) {
+        let x = posX;
+    let y = posY;
+
+
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }  
+        do Output.moveCursor(y, x);
+        do Output.printString("Brick Initialized");
+        return;
+    }
+
+    method void draw() {
+    if (~isDestroyed) {
+        // Vérifications pour s'assurer que x et y sont dans les limites valides
+        if (x < 0) {
+            let x = 0;
+        }
+        if (x > 159) {
+            let x = 159;
+        }
+        if (y < 0) {
+            let y = 0;
+        }
+        if (y > 119) {
+            let y = 119;
+        }
+
+        do Output.moveCursor(y, x);  
+        do Output.printString("Brick Active");
+        do drawSprite(brickSprite, x, y, 5, 5);  
+    } else {
+    if (x < 0) {
+            let x = 0;
+        }
+        if (x > 159) {
+            let x = 159;
+        }
+        if (y < 0) {
+            let y = 0;
+        }
+        if (y > 119) {
+            let y = 119;
+        }
+        do Output.moveCursor(y, x);  
+        do Output.printString("Brick Destroyed");
+    }
+    return;
+}
+
+    method int getX() {
+    if (x < 0) {
+            let x = 0;
+        }
+        if (x > 159) {
+            let x = 159;
+        }
+        if (y < 0) {
+            let y = 0;
+        }
+        if (y > 119) {
+            let y = 119;
+        }
+        do Output.moveCursor(5, 1);
+        do Output.printString("Brick X: ");
+        do Output.printInt(x);
+        return x;
+    }
+
+    method int getY() {
+    if (x < 0) {
+            let x = 0;
+        }
+        if (x > 159) {
+            let x = 159;
+        }
+        if (y < 0) {
+            let y = 0;
+        }
+        if (y > 119) {
+            let y = 119;
+        }
+        do Output.moveCursor(6, 1);
+        do Output.printString("Brick Y: ");
+        do Output.printInt(y);
+        return y;
+    }
+
+    method void destroy() {
+    if (x < 0) {
+            let x = 0;
+        }
+        if (x > 159) {
+            let x = 159;
+        }
+        if (y < 0) {
+            let y = 0;
+        }
+        if (y > 119) {
+            let y = 119;
+        }
+        let isDestroyed = true;
+        do Output.moveCursor(y, x);
+        do Output.printString("Brick Destroyed");
+        return;
+    }
+}

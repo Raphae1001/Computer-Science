@@ -1,0 +1,81 @@
+// Initialize the stack pointer
+push constant 256
+pop pointer 0
+
+// Push two constants and add them
+push constant 7
+push constant 8
+add
+
+// Subtract two constants
+push constant 10
+push constant 3
+sub
+
+// Perform negation
+push constant 5
+neg
+
+// Logical operations
+push constant 1
+push constant 0
+and
+push constant 1
+push constant 1
+or
+push constant 1
+not
+
+// Comparison operations
+push constant 5
+push constant 5
+eq
+push constant 10
+push constant 5
+gt
+push constant 5
+push constant 10
+lt
+
+// Memory access commands
+push constant 42
+pop local 0
+push local 0
+pop argument 0
+push argument 0
+pop this 0
+push this 0
+pop that 0
+
+// Static variable manipulation
+push constant 99
+pop static 0
+push static 0
+
+// Pointer manipulation
+push constant 3030
+pop pointer 1
+push pointer 1
+
+// Temp segment usage
+push constant 17
+pop temp 0
+push temp 0
+
+// Function call and return
+function SimpleFunction 2
+push constant 10
+push constant 20
+add
+return
+
+call SimpleFunction 2
+
+// Label and goto commands
+label LOOP_START
+push constant 1
+push constant 1
+add
+goto LOOP_START
+
+label END

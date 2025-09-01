@@ -1,0 +1,618 @@
+function Brick.drawSprite 4
+    push argument 0
+    pop pointer 0
+    push constant 0
+    pop local 0
+label Brick_0
+    push local 0
+    push argument 4
+    lt
+    not
+    if-goto Brick_1
+    push local 0
+    push argument 1
+    add
+    pop pointer 1
+    push that 0
+    pop local 2
+    push constant 0
+    pop local 1
+label Brick_2
+    push local 1
+    push argument 5
+    lt
+    not
+    if-goto Brick_3
+    push local 2
+    push constant 1
+    push argument 5
+    push constant 1
+    sub
+    push local 1
+    sub
+    lt
+    and
+    pop local 3
+    push local 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Brick_5
+    push argument 2
+    push local 1
+    add
+    push argument 3
+    push local 0
+    add
+    push argument 2
+    push local 1
+    add
+    push constant 1
+    add
+    push argument 3
+    push local 0
+    add
+    push constant 1
+    add
+    call Screen.drawRectangle 4
+    pop temp 0
+    goto Brick_4
+label Brick_5
+label Brick_4
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    goto Brick_2
+label Brick_3
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Brick_0
+label Brick_1
+    push constant 0
+    return
+function Brick.new 0
+    push argument 0
+    pop pointer 0
+    push constant 0
+    push this 0
+    add
+    push constant 31
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push this 0
+    add
+    push constant 17
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push this 0
+    add
+    push constant 17
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push this 0
+    add
+    push constant 17
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push this 0
+    add
+    push constant 31
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 0
+    pop this 3
+    push constant 0
+    return
+function Brick.init 0
+    push argument 0
+    pop pointer 0
+    push argument 1
+    pop this 1
+    push argument 2
+    pop this 2
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Brick_7
+    push constant 0
+    pop this 1
+    goto Brick_6
+label Brick_7
+label Brick_6
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Brick_9
+    push constant 159
+    pop this 1
+    goto Brick_8
+label Brick_9
+label Brick_8
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Brick_11
+    push constant 0
+    pop this 2
+    goto Brick_10
+label Brick_11
+label Brick_10
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Brick_13
+    push constant 119
+    pop this 2
+    goto Brick_12
+label Brick_13
+label Brick_12
+    push this 2
+    push this 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 17
+    call String.new 1
+    push constant 66
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 99
+    call String.appendChar 2
+    push constant 107
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 73
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 116
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 122
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 100
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push constant 0
+    return
+function Brick.draw 0
+    push argument 0
+    pop pointer 0
+    push this 3
+    not
+    not
+    if-goto Brick_15
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Brick_17
+    push constant 0
+    pop this 1
+    goto Brick_16
+label Brick_17
+label Brick_16
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Brick_19
+    push constant 159
+    pop this 1
+    goto Brick_18
+label Brick_19
+label Brick_18
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Brick_21
+    push constant 0
+    pop this 2
+    goto Brick_20
+label Brick_21
+label Brick_20
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Brick_23
+    push constant 119
+    pop this 2
+    goto Brick_22
+label Brick_23
+label Brick_22
+    push this 2
+    push this 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 12
+    call String.new 1
+    push constant 66
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 99
+    call String.appendChar 2
+    push constant 107
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 65
+    call String.appendChar 2
+    push constant 99
+    call String.appendChar 2
+    push constant 116
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 118
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push pointer 0
+    push this 0
+    push this 1
+    push this 2
+    push constant 5
+    push constant 5
+    call Brick.drawSprite 6
+    pop temp 0
+    goto Brick_14
+label Brick_15
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Brick_25
+    push constant 0
+    pop this 1
+    goto Brick_24
+label Brick_25
+label Brick_24
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Brick_27
+    push constant 159
+    pop this 1
+    goto Brick_26
+label Brick_27
+label Brick_26
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Brick_29
+    push constant 0
+    pop this 2
+    goto Brick_28
+label Brick_29
+label Brick_28
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Brick_31
+    push constant 119
+    pop this 2
+    goto Brick_30
+label Brick_31
+label Brick_30
+    push this 2
+    push this 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 15
+    call String.new 1
+    push constant 66
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 99
+    call String.appendChar 2
+    push constant 107
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 68
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 115
+    call String.appendChar 2
+    push constant 116
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 121
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 100
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+label Brick_14
+    push constant 0
+    return
+function Brick.getX 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Brick_33
+    push constant 0
+    pop this 1
+    goto Brick_32
+label Brick_33
+label Brick_32
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Brick_35
+    push constant 159
+    pop this 1
+    goto Brick_34
+label Brick_35
+label Brick_34
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Brick_37
+    push constant 0
+    pop this 2
+    goto Brick_36
+label Brick_37
+label Brick_36
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Brick_39
+    push constant 119
+    pop this 2
+    goto Brick_38
+label Brick_39
+label Brick_38
+    push constant 5
+    push constant 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 9
+    call String.new 1
+    push constant 66
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 99
+    call String.appendChar 2
+    push constant 107
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 88
+    call String.appendChar 2
+    push constant 58
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push this 1
+    call Output.printInt 1
+    pop temp 0
+    push this 1
+    return
+function Brick.getY 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Brick_41
+    push constant 0
+    pop this 1
+    goto Brick_40
+label Brick_41
+label Brick_40
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Brick_43
+    push constant 159
+    pop this 1
+    goto Brick_42
+label Brick_43
+label Brick_42
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Brick_45
+    push constant 0
+    pop this 2
+    goto Brick_44
+label Brick_45
+label Brick_44
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Brick_47
+    push constant 119
+    pop this 2
+    goto Brick_46
+label Brick_47
+label Brick_46
+    push constant 6
+    push constant 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 9
+    call String.new 1
+    push constant 66
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 99
+    call String.appendChar 2
+    push constant 107
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 89
+    call String.appendChar 2
+    push constant 58
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push this 2
+    call Output.printInt 1
+    pop temp 0
+    push this 2
+    return
+function Brick.destroy 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Brick_49
+    push constant 0
+    pop this 1
+    goto Brick_48
+label Brick_49
+label Brick_48
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Brick_51
+    push constant 159
+    pop this 1
+    goto Brick_50
+label Brick_51
+label Brick_50
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Brick_53
+    push constant 0
+    pop this 2
+    goto Brick_52
+label Brick_53
+label Brick_52
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Brick_55
+    push constant 119
+    pop this 2
+    goto Brick_54
+label Brick_55
+label Brick_54
+    push constant 1
+    neg
+    pop this 3
+    push this 2
+    push this 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 15
+    call String.new 1
+    push constant 66
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 99
+    call String.appendChar 2
+    push constant 107
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 68
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 115
+    call String.appendChar 2
+    push constant 116
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 121
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 100
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push constant 0
+    return

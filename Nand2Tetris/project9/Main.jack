@@ -1,0 +1,60 @@
+class Main {
+    function void main() {
+        var Game game;
+        var boolean playing;
+        var int level;
+        var int restart;
+        var int chances;
+        let playing = true;
+        let level = 1;
+
+        while (playing) {
+            do Output.moveCursor(10, 20);
+            do Output.printString("Welcome to BRICK BREAKER GAME");
+            do Output.moveCursor(12, 15);
+            do Output.printString("Press any key to start...");
+            while (Keyboard.keyPressed() = 0) {
+                do Sys.wait(100);
+            }
+            do Sys.wait(500);
+            do Screen.clearScreen();
+
+            do Output.moveCursor(10, 10);
+            do Output.printString("Break all the bricks to win!");
+            do Sys.wait(3000);
+            do Screen.clearScreen();
+
+            do game.init();
+            do game.run();
+
+            do Screen.clearScreen();
+            do Output.moveCursor(10, 15);
+            do Output.printString("LEVEL COMPLETED!");
+
+            if (chances > 0) {
+                let level = level + 1;
+                do Output.moveCursor(12, 20);
+                do Output.printString("CONGRATULATIONS! Proceeding to Level ");
+                do Output.printInt(level);
+                do Sys.wait(2000);
+            } else {
+                do Output.moveCursor(12, 20);
+                do Output.printString("GAME OVER! Do you want to play again?");
+                do Output.moveCursor(14, 20);
+                do Output.printString("0: Yes, 1: No");
+                let restart = Keyboard.readInt("");
+                if (restart = 1) {
+                    do Output.moveCursor(16, 20);
+                    do Output.printString("THANK YOU FOR PLAYING!");
+                    do Sys.wait(2000);
+                    do Screen.clearScreen();
+                    return;
+                } else {
+                    let level = 1;
+                }
+            }
+            do Screen.clearScreen();
+        }
+        return;
+    }
+}

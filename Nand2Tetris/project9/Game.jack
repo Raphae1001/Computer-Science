@@ -1,0 +1,98 @@
+class Game {
+    field Trampoline trampoline;
+    field Ball ball;
+    field Array bricks;
+    field int score;
+    field int x, dx, y, dy;
+    
+    method void init() {
+        var int i;
+        var Brick currentBrick;
+
+        do trampoline.new();
+        do trampoline.init(80, 140);
+        do ball.init(90, 130);
+
+        let bricks = Array.new(20);
+
+        let i = 0;
+        while (i < 20) {
+            do currentBrick.new();
+            do currentBrick.init((i - ((i / 10) * 10)) * 15, (i / 10) * 10);
+            let bricks[i] = currentBrick;
+            let i = i + 1;
+        }
+
+        let score = 0;
+        return;
+    }
+    
+    method void run() {
+        var int i, key;
+        var Brick currentBrick;
+
+        while (true) {
+            let key = Keyboard.keyPressed();
+
+            if (key = 203) {
+                do trampoline.move(-1);
+            }
+            if (key = 205) {
+                do trampoline.move(1);
+            }
+
+            do ball.move();
+            do ball.checkCollisionWithTrampoline(trampoline);
+
+            let i = 0;
+            while (i < 20) {
+                let currentBrick = bricks[i];
+                do ball.checkCollisionWithBrick(currentBrick);
+                let i = i + 1;
+            }
+
+            do draw();
+        }
+        return;
+    }
+    
+    method void draw() {
+    var int i;
+    var Brick currentBrick;
+    let x = x + dx;
+    let y = y + dy;
+
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }
+
+        
+
+        do Screen.clearScreen();
+
+        do Output.moveCursor(1, 2);
+        do Output.printString("Score: ");
+        do Output.printInt(score);
+
+        do trampoline.draw();
+        do ball.draw();
+
+        let i = 0;
+        while (i < 20) {
+            let currentBrick = bricks[i];
+            do currentBrick.draw();
+            let i = i + 1;
+        }
+
+        return;
+    }
+}

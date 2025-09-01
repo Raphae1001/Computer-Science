@@ -1,0 +1,618 @@
+function Trampoline.drawSprite 4
+    push argument 0
+    pop pointer 0
+    push constant 0
+    pop local 0
+label Trampoline_0
+    push local 0
+    push argument 4
+    lt
+    not
+    if-goto Trampoline_1
+    push local 0
+    push argument 1
+    add
+    pop pointer 1
+    push that 0
+    pop local 2
+    push constant 0
+    pop local 1
+label Trampoline_2
+    push local 1
+    push argument 5
+    lt
+    not
+    if-goto Trampoline_3
+    push local 2
+    push constant 1
+    push argument 5
+    push constant 1
+    sub
+    push local 1
+    sub
+    lt
+    and
+    pop local 3
+    push local 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Trampoline_5
+    push argument 2
+    push local 1
+    add
+    push argument 3
+    push local 0
+    add
+    push argument 2
+    push local 1
+    add
+    push constant 1
+    add
+    push argument 3
+    push local 0
+    add
+    push constant 1
+    add
+    call Screen.drawRectangle 4
+    pop temp 0
+    goto Trampoline_4
+label Trampoline_5
+label Trampoline_4
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    goto Trampoline_2
+label Trampoline_3
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Trampoline_0
+label Trampoline_1
+    push constant 0
+    return
+function Trampoline.new 0
+    push argument 0
+    pop pointer 0
+    push constant 0
+    push this 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push this 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
+    pop this 3
+    push constant 0
+    return
+function Trampoline.init 0
+    push argument 0
+    pop pointer 0
+    push argument 1
+    pop this 1
+    push argument 2
+    pop this 2
+    push constant 30
+    pop this 3
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_7
+    push constant 0
+    pop this 1
+    goto Trampoline_6
+label Trampoline_7
+label Trampoline_6
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Trampoline_9
+    push constant 159
+    pop this 1
+    goto Trampoline_8
+label Trampoline_9
+label Trampoline_8
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_11
+    push constant 0
+    pop this 2
+    goto Trampoline_10
+label Trampoline_11
+label Trampoline_10
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Trampoline_13
+    push constant 119
+    pop this 2
+    goto Trampoline_12
+label Trampoline_13
+label Trampoline_12
+    push this 2
+    push this 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 22
+    call String.new 1
+    push constant 84
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 109
+    call String.appendChar 2
+    push constant 112
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 73
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 116
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 122
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 100
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push constant 0
+    return
+function Trampoline.getX 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_15
+    push constant 0
+    pop this 1
+    goto Trampoline_14
+label Trampoline_15
+label Trampoline_14
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Trampoline_17
+    push constant 159
+    pop this 1
+    goto Trampoline_16
+label Trampoline_17
+label Trampoline_16
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_19
+    push constant 0
+    pop this 2
+    goto Trampoline_18
+label Trampoline_19
+label Trampoline_18
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Trampoline_21
+    push constant 119
+    pop this 2
+    goto Trampoline_20
+label Trampoline_21
+label Trampoline_20
+    push constant 3
+    push constant 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 14
+    call String.new 1
+    push constant 84
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 109
+    call String.appendChar 2
+    push constant 112
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 88
+    call String.appendChar 2
+    push constant 58
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push this 1
+    call Output.printInt 1
+    pop temp 0
+    push this 1
+    return
+function Trampoline.getY 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_23
+    push constant 0
+    pop this 1
+    goto Trampoline_22
+label Trampoline_23
+label Trampoline_22
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Trampoline_25
+    push constant 159
+    pop this 1
+    goto Trampoline_24
+label Trampoline_25
+label Trampoline_24
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_27
+    push constant 0
+    pop this 2
+    goto Trampoline_26
+label Trampoline_27
+label Trampoline_26
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Trampoline_29
+    push constant 119
+    pop this 2
+    goto Trampoline_28
+label Trampoline_29
+label Trampoline_28
+    push constant 4
+    push constant 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 14
+    call String.new 1
+    push constant 84
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 109
+    call String.appendChar 2
+    push constant 112
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 89
+    call String.appendChar 2
+    push constant 58
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push this 2
+    call Output.printInt 1
+    pop temp 0
+    push this 2
+    return
+function Trampoline.getWidth 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_31
+    push constant 0
+    pop this 1
+    goto Trampoline_30
+label Trampoline_31
+label Trampoline_30
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Trampoline_33
+    push constant 159
+    pop this 1
+    goto Trampoline_32
+label Trampoline_33
+label Trampoline_32
+    push this 2
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_35
+    push constant 0
+    pop this 2
+    goto Trampoline_34
+label Trampoline_35
+label Trampoline_34
+    push this 2
+    push constant 119
+    gt
+    not
+    if-goto Trampoline_37
+    push constant 119
+    pop this 2
+    goto Trampoline_36
+label Trampoline_37
+label Trampoline_36
+    push constant 4
+    push constant 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 18
+    call String.new 1
+    push constant 84
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 109
+    call String.appendChar 2
+    push constant 112
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 87
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 100
+    call String.appendChar 2
+    push constant 116
+    call String.appendChar 2
+    push constant 104
+    call String.appendChar 2
+    push constant 58
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push this 3
+    call Output.printInt 1
+    pop temp 0
+    push this 3
+    return
+function Trampoline.move 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push argument 1
+    push constant 5
+    call Math.multiply 2
+    add
+    pop this 1
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_39
+    push constant 0
+    pop this 1
+    goto Trampoline_38
+label Trampoline_39
+label Trampoline_38
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Trampoline_41
+    push constant 159
+    pop this 1
+    goto Trampoline_40
+label Trampoline_41
+label Trampoline_40
+    push this 2
+    push this 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 17
+    call String.new 1
+    push constant 84
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 109
+    call String.appendChar 2
+    push constant 112
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 104
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 58
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push pointer 0
+    push this 0
+    push this 1
+    push this 2
+    push constant 2
+    push constant 10
+    call Trampoline.drawSprite 6
+    pop temp 0
+    push constant 0
+    return
+function Trampoline.draw 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push constant 0
+    lt
+    not
+    if-goto Trampoline_43
+    push constant 0
+    pop this 1
+    goto Trampoline_42
+label Trampoline_43
+label Trampoline_42
+    push this 1
+    push constant 159
+    gt
+    not
+    if-goto Trampoline_45
+    push constant 159
+    pop this 1
+    goto Trampoline_44
+label Trampoline_45
+label Trampoline_44
+    push this 2
+    push this 1
+    call Output.moveCursor 2
+    pop temp 0
+    push constant 17
+    call String.new 1
+    push constant 84
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 109
+    call String.appendChar 2
+    push constant 112
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 104
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 58
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    call Output.printString 1
+    pop temp 0
+    push pointer 0
+    push this 0
+    push this 1
+    push this 2
+    push constant 2
+    push constant 10
+    call Trampoline.drawSprite 6
+    pop temp 0
+    push constant 0
+    return

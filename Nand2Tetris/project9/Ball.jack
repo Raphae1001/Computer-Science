@@ -1,0 +1,125 @@
+class Ball {
+    field Array ballSprite;
+    field int x, y, dx, dy;
+
+    method void drawSprite(Array sprite, int x, int y, int height, int width) {
+        var int i, j, row, bit;
+        let i = 0;
+        while (i < height) {  
+            let row = sprite[i];
+            let j = 0;
+            while (j < width) {  
+                let bit = row & (1 < (width - 1 - j));  
+                if (~(bit = 0)) {
+                    do Screen.drawRectangle(x + j, y + i, x + j + 1, y + i + 1);  
+                }
+                let j = j + 1;
+            }
+            let i = i + 1;
+        }
+        return;
+    }
+
+    method void new() {
+        let ballSprite[0] = 2;       
+        let ballSprite[1] = 7;       
+        let ballSprite[2] = 2;       
+        let dx = 2;
+        let dy = 2;
+        return;
+    }
+
+    method void init(int posX, int posY) {
+    let x = posX;
+    let y = posY;
+
+
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }
+
+    let dx = 2;
+    let dy = 2;   
+
+        do Output.moveCursor(y, x);
+        do Output.printString("Ball Initialized");
+        return;
+    }
+
+    method void move() {
+    let x = x + dx;
+    let y = y + dy;
+
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }
+
+    do Output.moveCursor(y, x); 
+    do Output.printString("Ball is here: ");
+    do drawSprite(ballSprite, x, y, 3, 3);  
+    return;
+}
+
+    method void checkCollisionWithBrick(Brick brick) {
+        var int brickX, brickY;
+        let brickX = brick.getX();
+        let brickY = brick.getY();
+
+        if ((x > brickX) & (x < brickX + 10) & 
+            (y > brickY) & (y < brickY + 5)) { 
+            do brick.destroy(); 
+            let dy = -dy;       
+        }
+        return;
+    }
+
+    method void checkCollisionWithTrampoline(Trampoline trampoline) {
+        var int trampX, trampY, trampWidth;
+        let trampX = trampoline.getX();
+        let trampY = trampoline.getY();
+        let trampWidth = trampoline.getWidth();
+
+        if ((y > trampY) & (y < trampY + 5) &
+            (x > trampX) & (x < trampX + trampWidth)) {
+            let dy = -dy; 
+        }
+        return;
+    }
+
+    method void draw() {
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }
+        do Output.moveCursor(y, x);  
+        do Output.printString("Ball is here: ");
+        do drawSprite(ballSprite, x, y, 3, 3);  
+        return;
+    }
+}

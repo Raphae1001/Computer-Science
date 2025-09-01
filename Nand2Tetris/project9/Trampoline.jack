@@ -1,0 +1,138 @@
+class Trampoline {
+    field Array trampolineSprite;
+    field int x, y, width;
+
+    method void drawSprite(Array sprite, int x, int y, int height, int width) {
+        var int i, j, row, bit;
+        let i = 0;
+        while (i < height) {  
+            let row = sprite[i];
+            let j = 0;
+            while (j < width) {  
+                let bit = row & (1 < (width - 1 - j));  
+                if (~(bit = 0)) {
+                    do Screen.drawRectangle(x + j, y + i, x + j + 1, y + i + 1);  
+                }
+                let j = j + 1;
+            }
+            let i = i + 1;
+        }
+        return;
+    }
+
+    method void new() {
+        let trampolineSprite[0] = 1023;  
+        let trampolineSprite[1] = 1023;  
+        let width = 10;
+        return;
+    }
+
+    method void init(int posX, int posY) {
+        let x = posX;
+    let y = posY;
+    let width = 30;
+
+
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }
+        do Output.moveCursor(y, x);
+        do Output.printString("Trampoline Initialized");
+        return;
+    }
+
+    method int getX() {
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }
+        do Output.moveCursor(3, 1);
+        do Output.printString("Trampoline X: ");
+        do Output.printInt(x);
+        return x;
+    }
+
+    method int getY() {
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }
+        do Output.moveCursor(4, 1);
+        do Output.printString("Trampoline Y: ");
+        do Output.printInt(y);
+        return y;
+    }
+
+    method int getWidth() {
+    if (x < 0) {
+        let x = 0;
+    }
+    if (x > 159) {
+        let x = 159;
+    }
+    if (y < 0) {
+        let y = 0;
+    }
+    if (y > 119) {
+        let y = 119;
+    }
+        do Output.moveCursor(4, 1);
+        do Output.printString("Trampoline Width: ");
+        do Output.printInt(width);
+        return width;
+    }
+
+    method void move(int direction) {
+    let x = x + (direction * 5);  
+
+    if (x < 0) {
+        let x = 0; 
+    }
+    if (x > 159) {
+        let x = 159; 
+    }
+
+    do Output.moveCursor(y, x);
+    do Output.printString("Trampoline here: ");
+    do drawSprite(trampolineSprite, x, y, 2, 10);  
+    return;
+}
+
+    method void draw() {
+    if (x < 0) {
+        let x = 0; 
+    }
+    if (x > 159) {
+        let x = 159; 
+    }
+        do Output.moveCursor(y, x);  
+        do Output.printString("Trampoline here: ");
+        do drawSprite(trampolineSprite, x, y, 2, 10);  
+        return;
+    }
+}
