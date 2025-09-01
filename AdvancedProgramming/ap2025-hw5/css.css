@@ -1,0 +1,47 @@
+div.hidden {
+    display: none;
+}
+a.valid {
+    display: block;   
+}
+a.malicious {
+    display: block;
+}
+div.button {
+    width: 150px; 
+    height: 40px; 
+    background-color: yellow; 
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.div-grid {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+} 
+
+/* CSS selectors for question 9 */
+#lime_paragraph > .lime_paragraph > p {
+    color: rgba(0, 255, 0, 1);
+}
+
+#blue_background p[blue] {
+    background-color: #0000ff;
+}
+
+/* CSS pseudo-classes and pseudo-elements for question 10 */
+.redcontent > p:first-of-type {
+    color: rgba(255, 0, 0, 1);
+}
+
+p.text_after::after {
+    content: "Added this text";
+}
+
+#q10-div2 > p:nth-child(2) {
+    color: inherit;
+}
